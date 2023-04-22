@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <style>
+        .content {
+            max-width: 500px;
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+    <head>
+        <title>Manager-only Page</title>
+    </head>
+    <div class="content">
+        <h1>Secret Manager-only Page.</h1>
+        <p style="margin-bottom:10px">Try accessing as a User.</p>
+        <form th:action="@{/logout}" method="post"><input style="margin-bottom:10px" type="submit" value = "Logout"></form>
+        <form th:action="@{/}" method="post"><input type="submit" value = "Back"></form>
+    </div>
+</html>

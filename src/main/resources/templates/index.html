@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <style>
+        .content {
+            max-width: 500px;
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+    <head>
+        <title>Login Example Testing</title>
+    </head>
+    <div class="content">
+        <h1>Login Successful, Welcome <span sec:authentication="name">Username</span></h1>
+        <h1><div sec:authorize="hasAuthority('MANAGER')">Role: Manager</div></h1>
+        <h1><div sec:authorize="hasAuthority('USER')">Role: User</div></h1>
+        <div style="margin-bottom:10px" sec:authorize="hasAuthority('USER')">(Try accessing /manager)</div>
+        <form th:action="@{/logout}" method="post" ><input style="margin-bottom:10px" type="submit" value = "Logout"></form>
+        <span sec:authorize="hasAuthority('MANAGER')"><form th:action="@{/manager}" method="get"><input type="submit" value ="Manager"></form></span>
+    </div>
+</html>
