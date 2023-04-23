@@ -1,10 +1,10 @@
 Login Application
 
-Built using Spring Boot 3.0.6, 
+Built using Spring Boot 3.0.6 in vscode, alternatively build with maven. JDK 20. 
 
 Import the MySQL database, with root/password.
 
-Run LoginexampleApplication.java, website will be hosted on localhost:8080.
+Run LoginexampleApplication.java (or use the .jar after building), website will be hosted on localhost:8080.
 
 Accounts are manager/manger, user/user. Any additional accounts need to be added to the user DB (password has to be Bcrypt-ed), and roles assigned in the user_roles DB (INSERT INTO `user_roles` (`id`, `role`) VALUES ([user_id], [role (1=manager, 2=user)]);)
 
